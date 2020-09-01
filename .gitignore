@@ -1,3 +1,4 @@
+# 안드로이드
 *.iml
 .gradle
 local.properties
@@ -7,3 +8,6 @@ build
 captures
 .externalNativeBuild
 .cxx
+
+# 자바
+out
