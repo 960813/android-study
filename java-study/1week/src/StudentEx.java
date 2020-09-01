@@ -2,9 +2,15 @@
 // 클래스에 생성자가 하나도 없으면 기본 생성자는 JVM이 자동으로 넣어준다.
 // 클래스를 만들때 기본 생성자를 만들어 주는 습관을 가지는 것이 좋다.
 // 생성자 역할: 객체 생성시 초기화
+/*
+자료형 비교
+1. 기본 자료형: ==
+2. 참조 자료형: equals() 메소드
+    > Object equals()는 객체의 주소 값을 비교 -> return (this==obj)
+ */
 class Student {
     // Field
-    private String name;
+    String name;
     private int age;
 
     // 해결: 기본 생성자 추가
@@ -13,15 +19,21 @@ class Student {
     }
 
     // Constructor
-    public Student(String n, int a) {
-        name = n;
-        age = a;
+    // this: 객체 자기 자신을 지칭
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
     // 객체 정보를 문자열로 표현
     // Object 클래스의 toString() 메소드 오버라이딩
     public String toString() {
         return name + ":" + age;
+    }
+
+    // Object 클래스의 equals() 메소드 오버라이딩
+    public boolean equals(Student stu) {
+        return this.name.equals(stu.name) && this.age == stu.age;
     }
 }
 
@@ -35,5 +47,12 @@ public class StudentEx {
 
         Student stu2 = new Student("손흥민", 26);
         System.out.println("stu2 : " + stu2);
+
+        Student stu3 = new Student("홍길동", 24);
+
+        System.out.println(stu1.equals(stu3));
+        System.out.println(stu1.equals(stu2));
+        
+        System.out.println(stu1.name);
     }
 }
