@@ -26,6 +26,14 @@ def common(L1, L2):
     return True
 
 
+lst1 = [1, 2, 3]
+lst2 = [3, 1, 2]
+print(common(lst1, lst2))
+
 lst1 = [1, 1, 1]
 lst2 = [1]
+print(common(lst1, lst2))
+
+lst1 = [1]
+lst2 = [1, 2]
 print(common(lst1, lst2))
