@@ -1,4 +1,4 @@
-song_grade = {
+song_rate = {
     "Dynamite": 5,
     "WAP": 3,
     "Laugh Now Cry Later": 4,
@@ -6,6 +6,6 @@ song_grade = {
     "Blinding Lights": 5
 }
 
-for key in song_grade.keys():
-    if song_grade[key] == 5:
+for key in song_rate.keys():
+    if song_rate[key] == 5:
         print(key)
