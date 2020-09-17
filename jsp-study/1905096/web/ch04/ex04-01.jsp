@@ -1,9 +1,9 @@
 <%--
   Created by IntelliJ IDEA.
-  User: marti
+  File: ex04-01.jsp
+  User: 1905096(진태양)
   Date: 2020-09-17
   Time: 오전 12:18
-  To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"
          import="java.util.Date, java.text.SimpleDateFormat"
