@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageView;
     BitmapDrawable bitmap;
 
+    boolean image_convert = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +38,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnImageConvertClick(View v) {
         Resources res = getResources();
-        bitmap = (BitmapDrawable) res.getDrawable(R.drawable.image02);
+        if (image_convert) {
+            bitmap = (BitmapDrawable) res.getDrawable(R.drawable.image01);
+            image_convert = false;
+        } else {
+            bitmap = (BitmapDrawable) res.getDrawable(R.drawable.image02);
+            image_convert = true;
+        }
 
         int bitmapWidth = bitmap.getIntrinsicWidth();
         int bitmapHeight = bitmap.getIntrinsicHeight();
