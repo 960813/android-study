@@ -15,7 +15,9 @@ int main(void)
     // 1. 변수 선언
     myDataType2 ZZ; // myDataType 이라는 독특한 이름을 가진, 나만의 자료형으로 메모리공간 확보
 
-    // printf("sizeof 'ZZ' is %d\n", sizeof(ZZ));
+
+    // 4 + 1 + 1 + 4 = 10, 그러나 가장 큰 자료형을 기준으로 정렬하기 때문에 padding을 2 추가해서 12가 됨.
+    printf("sizeof 'ZZ' is %d\n", sizeof(ZZ));
 
     // 2. 만들어진(선언된) 저장공간(변수)을 활용(저장/인출)
     ZZ.member_int = 768896;
