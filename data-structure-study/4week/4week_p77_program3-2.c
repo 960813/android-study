@@ -47,6 +47,7 @@ void print_poly(polynomial p)
 // 다항식 계수 입력 함수, while 문에서 처리하기엔 지저분해서 별도로 분리
 // int poly_id : 몇번째 다항식인지 식별하기 위한 identifier
 // int coef_idx : 다항식의 몇번째 계수인지 식별하기 위한 index
+// float* coef : 다항식 계수의 주소를 전달 받아 값 입력
 // ctrl+z(EOF) 입력 시 0(false) 반환
 // 그 외 1(true) 반환
 int input_poly_coef(int poly_id, int coef_idx, float* coef)
