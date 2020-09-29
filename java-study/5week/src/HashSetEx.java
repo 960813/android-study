@@ -23,6 +23,11 @@ public class HashSetEx {
         // Raw Object가 아닌 Generic Object
         // Integer 타입의 데이터만 저장
         HashSet<Integer> intSet = new HashSet<Integer>();
+        intSet.add(10);
+        intSet.add(Integer.valueOf(10));
+        intSet.add(123);
+        intSet.add(222);
+        System.out.println(intSet);
 
     }
 }
