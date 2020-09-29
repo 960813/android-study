@@ -28,6 +28,5 @@ public class HashSetEx {
         intSet.add(123);
         intSet.add(222);
         System.out.println(intSet);
-
     }
 }
