@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class ArrayList2Ex {
+public class ArrayListEx2 {
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<Integer>();
 
