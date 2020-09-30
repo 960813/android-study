@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">basic_widget</string>
+    <string name="my_string">안녕하세요. 반갑습니다.</string>
+</resources>
