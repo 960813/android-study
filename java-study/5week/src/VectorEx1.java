@@ -51,7 +51,7 @@ public class VectorEx1 {
         System.out.println();
         System.out.println("===HashSet Test===");
         System.out.println();
-        
+
         // HashSet Test
         // Set 계열: 중복 X, 순서 O
         HashSet<Point> set = new HashSet<Point>();
