@@ -34,6 +34,6 @@
         }
     %>
 </b>
-을 선택하셨군요.
+<%=subjects.length%> 과목을 선택하셨군요.
 </body>
 </html>

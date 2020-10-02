@@ -25,6 +25,8 @@
     <input type="checkbox" name="subj" value="JSP">JSP <br>
     <input type="checkbox" name="subj" value="오라클실무">오라클실무 <br>
     <input type="checkbox" name="subj" value="ERP구축">ERP구축 <br>
+    <input type="checkbox" name="subj" value="JSP프로그래밍">JSP프로그래밍 <br>
+    <input type="checkbox" name="subj" value="교육학개론">교육학개론 <br>
     <br>
     <input type="submit" value="확인">
     <input type="reset" value="취소">
