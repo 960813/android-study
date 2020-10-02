@@ -5,7 +5,7 @@
   Date: 2020-10-02
   Time: 오후 6:42
 --%>
-<%--<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>--%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 
 <%-- request 인코딩 변경 --%>
 <%--<% request.setCharacterEncoding("UTF-8"); %>--%>
@@ -30,6 +30,7 @@
         for (String subject : subjects) {
             out.print(" - ");
             out.print(subject);
+//            out.print(new String(subject.getBytes("ISO-8859-1"), "utf-8"));
             out.print("<br>");
         }
     %>
