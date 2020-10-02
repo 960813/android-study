@@ -25,6 +25,9 @@
             <option value="감시자들">감시자들</option>
             <option value="피아니스트">피아니스트</option>
             <option value="대부">대부</option>
+            <option value="담보">담보</option>
+            <option value="국제수사">국제수사</option>
+            <option value="그린랜드">그린랜드</option>
         </select>
         <p></p>
         <input type="submit" value="전송">

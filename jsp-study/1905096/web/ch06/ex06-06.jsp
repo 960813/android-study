@@ -22,9 +22,20 @@
     String[] movies = request.getParameterValues("movie");
     for (int i = 0; i < movies.length; ++i) {
 %>
-        <%=i + 1%>.
-        <%=movies[i]%> <br>
+<%=i + 1%>.
+<%=movies[i]%> <br>
 <% }%>
+<%
+    if (movies.length >= 7) {
+        out.print("당신은 영화를 정말 좋아하시네요!");
+    } else if (movies.length >= 5) {
+        out.print("영화광입니다.");
+    } else if (movies.length >= 3) {
+        out.print("영화감상이 취미네요.");
+    } else {
+        out.print("영화를 좋아하지 않으시네요.");
+    }
+%>
 
 </body>
 </html>
