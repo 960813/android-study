@@ -22,8 +22,9 @@ class Queue(object):
     def size(self):
         return len(self.queue)
 
+    # 먼저 삽입된 요소가 가장 아래에 출력
     def prettyprint(self):
-        for item in self.queue:
+        for item in self.queue[::-1]:
             print('[__', item, '__]')
 
 
