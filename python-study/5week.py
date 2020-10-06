@@ -109,3 +109,40 @@ stackRectangle.add_many(rectangle, 5)
 
 stackCircle.prettyprint()
 stackRectangle.prettyprint()
+
+
+##
+# 셀프체크 33.1
+##
+class Fraction(object):
+    def __init__(self, top, bottom):
+        self.top = top
+        self.bottom = bottom
+
+    def __sub__(self, other):
+        newtop = self.top * other.bottom - other.top * self.bottom
+        newbottom = self.bottom * other.bottom
+        return Fraction(newtop, newbottom)
+
+    def __str__(self):  # A
+        return str(self.top) + "/" + str(self.bottom)  # B
+
+
+f1 = Fraction(1, 4)
+f2 = Fraction(1, 8)
+print(f1 - f2)
+
+##
+# 셀프체크 33.2
+##
+class Fraction(object):
+    def __init__(self, top, bottom):
+        self.top = top
+        self.bottom = bottom
+
+    def __str__(self):  # A
+        return str(self.top) + "\n--\n" + str(self.bottom)  # B
+
+
+f1 = Fraction(1, 4)
+print(f1)
