@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 // 정렬 기능을 가지는 Comparable 구현
 class PlayerVO implements Comparable<PlayerVO> {
@@ -23,6 +24,30 @@ class PlayerVO implements Comparable<PlayerVO> {
         System.out.println("정렬 시도..");
         return this.name.compareTo(p.name);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public int getRegYear() {
+        return regYear;
+    }
+
+    public void setRegYear(int regYear) {
+        this.regYear = regYear;
+    }
 }
 
 public class PlayerVOSortEx {
@@ -38,6 +63,13 @@ public class PlayerVOSortEx {
 
         System.out.println("== 정렬 ==");
         Collections.sort(players);
+        System.out.println(players);
+
+        System.out.println();
+        // 입단 연도별 정렬
+        System.out.println("== 입단 연도별 정렬 ==");
+        Comparator comparator = new YearComparator();
+        Collections.sort(players, comparator);
         System.out.println(players);
     }
 }
