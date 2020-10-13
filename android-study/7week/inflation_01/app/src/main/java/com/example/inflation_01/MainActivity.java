@@ -16,16 +16,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        LinearLayout linearLayout = new LinearLayout(this);
-        linearLayout.setOrientation(LinearLayout.VERTICAL);
-        LinearLayout.LayoutParams params =
-                new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        linearLayout.setLayoutParams(params);
-
-        Button b = new Button(this);
-        linearLayout.addView(b);
-
-        setContentView(linearLayout);
+//        LinearLayout linearLayout = new LinearLayout(this);
+//        linearLayout.setOrientation(LinearLayout.VERTICAL);
+//        LinearLayout.LayoutParams params =
+//                new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//        linearLayout.setLayoutParams(params);
+//
+//        Button b = new Button(this);
+//        linearLayout.addView(b);
+//
+//        setContentView(linearLayout);
 
 
         setContentView(R.layout.activity_main);
@@ -42,7 +42,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-
-
     }
 }
