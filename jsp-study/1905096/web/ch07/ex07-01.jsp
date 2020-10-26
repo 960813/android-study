@@ -14,7 +14,7 @@
     String url = "jdbc:oracle:thin:@oracle11gr2.crwpeutgjyaj.ap-northeast-2.rds.amazonaws.com:15211:ORCL";
     try {
         Class.forName("oracle.jdbc.driver.OracleDriver");
-        Connection connection = DriverManager.getConnection(url, "y1905096", "pass1905096");
+        Connection connection = DriverManager.getConnection(url, "y1905096", "1q2w3e4r");
         Statement statement = connection.createStatement();
 
         ResultSet resultSet = statement.executeQuery(sql);
