@@ -20,12 +20,8 @@ int rec(int n, int* res)
 
 int main(void)
 {
-    int result = 0, sum;
-
-    sum = rec(5, &result);
-    printf("%d, %d\n", sum, result);
-
-    sum = rec(2, &result);
-    printf("%d, %d\n", sum, result);
+    double *p1;
+    p1 = (int *)malloc(sizeof(double));
+    *p1 = 23.92;
     return 0;
 }
