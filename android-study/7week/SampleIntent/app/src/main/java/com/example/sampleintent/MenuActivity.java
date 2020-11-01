@@ -12,6 +12,9 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        Intent intent = getIntent();
+        int data = intent.getIntExtra("data", 0);
     }
 
     public void myClick(View view) {

@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
 //                startActivity(intent);
+                intent.putExtra("data", 100);
+                intent.putExtra("data1", 200);
+                intent.putExtra("data2", true);
                 startActivityForResult(intent, REQ_CODE_MENU);
             }
         });
