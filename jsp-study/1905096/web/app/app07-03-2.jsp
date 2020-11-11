@@ -14,13 +14,13 @@
     String Professor_ID = request.getParameter("professor_id");
     int Course_Fees = Integer.parseInt(request.getParameter("course_fees"));
 
-    String url = "jdbc:oracle:thin:@oracle11gr2.crwpeutgjyaj.ap-northeast-2.rds.amazonaws.com:15211:ORCL";
+    String url = "jdbc:oracle:thin:@oracle12.cwdeh862c8nr.ap-northeast-2.rds.amazonaws.com:15211:ORCL";
     String sql = "UPDATE Course ";
     sql += "SET Title = ?, C_Number = ?, Professor_ID = ?, Course_Fees = ? ";
     sql += "WHERE Course_ID = ?";
     try {
         Class.forName("oracle.jdbc.driver.OracleDriver");
-        Connection con = DriverManager.getConnection(url, "y1905096", "1q2w3e4r");
+        Connection con = DriverManager.getConnection(url, "y1905096", "pass1905096");
         PreparedStatement pstmt = con.prepareStatement(sql);
 
         pstmt.setString(1, Title);

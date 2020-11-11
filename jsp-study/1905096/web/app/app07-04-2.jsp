@@ -10,12 +10,12 @@
 <% request.setCharacterEncoding("UTF-8");%>
 <%
     String course_id = request.getParameter("course_id");
-    String url = "jdbc:oracle:thin:@oracle11gr2.crwpeutgjyaj.ap-northeast-2.rds.amazonaws.com:15211:ORCL";
+    String url = "jdbc:oracle:thin:@oracle12.cwdeh862c8nr.ap-northeast-2.rds.amazonaws.com:15211:ORCL";
 
     String sql = "SELECT * FROM Course WHERE Course_ID = ?";
 
     Class.forName("oracle.jdbc.driver.OracleDriver");
-    Connection con = DriverManager.getConnection(url, "y1905096", "1q2w3e4r");
+    Connection con = DriverManager.getConnection(url, "y1905096", "pass1905096");
     PreparedStatement pstmt = con.prepareStatement(sql);
     pstmt.setString(1, course_id);
 

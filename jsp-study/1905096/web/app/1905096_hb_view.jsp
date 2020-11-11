@@ -10,7 +10,7 @@
 <%@ page import="java.util.HashMap" %>
 <%
     Class.forName("oracle.jdbc.driver.OracleDriver");
-    String url = "jdbc:oracle:thin:@oracle11gr2.crwpeutgjyaj.ap-northeast-2.rds.amazonaws.com:15211:ORCL";
+    String url = "jdbc:oracle:thin:@oracle12.cwdeh862c8nr.ap-northeast-2.rds.amazonaws.com:15211:ORCL";
     int i = 0;
     int total_grade = 0;
     double total_score = 0.0;
@@ -27,7 +27,7 @@
     score_map.put("F", 0.0);
 
     try {
-        Connection con = DriverManager.getConnection(url, "y1905096", "1q2w3e4r");
+        Connection con = DriverManager.getConnection(url, "y1905096", "pass1905096");
         String sql = "SELECT * FROM ScoreList WHERE Student_ID = ?";
         PreparedStatement pstmt = con.prepareStatement(sql);
         pstmt.setString(1, request.getParameter("Student_ID"));

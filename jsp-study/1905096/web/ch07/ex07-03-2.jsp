@@ -12,13 +12,13 @@
     String Dept_Name = request.getParameter("dept_name");
     String Dept_Tel = request.getParameter("dept_tel");
 
-    String url = "jdbc:oracle:thin:@oracle11gr2.crwpeutgjyaj.ap-northeast-2.rds.amazonaws.com:15211:ORCL";
+    String url = "jdbc:oracle:thin:@oracle12.cwdeh862c8nr.ap-northeast-2.rds.amazonaws.com:15211:ORCL";
     String sql = "UPDATE Department ";
     sql += "SET Dept_Name = ?, Dept_Tel = ? ";
     sql += "WHERE Dept_ID = ?";
     try {
         Class.forName("oracle.jdbc.driver.OracleDriver");
-        Connection con = DriverManager.getConnection(url, "y1905096", "1q2w3e4r");
+        Connection con = DriverManager.getConnection(url, "y1905096", "pass1905096");
         PreparedStatement pstmt = con.prepareStatement(sql);
 
         pstmt.setString(1, Dept_Name);

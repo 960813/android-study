@@ -14,7 +14,7 @@
     String Dept_ID = request.getParameter("dept_id");
     String Dept_Name = request.getParameter("dept_name");
     String Dept_Tel = request.getParameter("dept_tel");
-    String url = "jdbc:oracle:thin:@oracle11gr2.crwpeutgjyaj.ap-northeast-2.rds.amazonaws.com:15211:ORCL";
+    String url = "jdbc:oracle:thin:@oracle12.cwdeh862c8nr.ap-northeast-2.rds.amazonaws.com:15211:ORCL";
     String sql = "INSERT INTO Department (Dept_ID, Dept_Name, Dept_Tel) VALUES (?, ?, ?)";
     try {
         Class.forName("oracle.jdbc.driver.OracleDriver");

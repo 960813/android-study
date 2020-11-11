@@ -16,11 +16,11 @@
     int C_Number = Integer.parseInt(request.getParameter("c_number"));
     String Professor_ID = request.getParameter("professor_id");
     int Course_Fees = Integer.parseInt(request.getParameter("course_fees"));
-    String url = "jdbc:oracle:thin:@oracle11gr2.crwpeutgjyaj.ap-northeast-2.rds.amazonaws.com:15211:ORCL";
+    String url = "jdbc:oracle:thin:@oracle12.cwdeh862c8nr.ap-northeast-2.rds.amazonaws.com:15211:ORCL";
     String sql = "INSERT INTO Course (Course_ID, Title, C_Number, Professor_ID, Course_Fees) VALUES (?, ?, ?, ?, ?)";
     try {
         Class.forName("oracle.jdbc.driver.OracleDriver");
-        Connection connection = DriverManager.getConnection(url, "y1905096", "1q2w3e4r");
+        Connection connection = DriverManager.getConnection(url, "y1905096", "pass1905096");
         PreparedStatement pstmt = connection.prepareStatement(sql);
         pstmt.setString(1, Course_ID);
         pstmt.setString(2, Title);

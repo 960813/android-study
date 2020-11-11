@@ -41,7 +41,7 @@
     <parameter name="className" value="org.apache.axis.monitor.SOAPMonitorService"/>
   </service>
     <service name="HelloWorld" provider="java:RPC" style="document" use="literal">
-        <parameter name="className" value="example.HelloWorld"/>
+        <parameter name="className" value="ch10.HelloWorld"/>
         <parameter name="allowedMethods" value="*"/>
         <parameter name="scope" value="Application"/>
         <namespace>http://example</namespace>
