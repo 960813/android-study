@@ -36,7 +36,7 @@
   * Class 내부에 Serialize 되지 않는 객체가 있다면 Serialize되지 않음
   * 상속만 받으면 되기 때문에 구현이 편리함
 * Parcelable Interface 구현
-  * 별도의 메소드 오버라이딩이 요구됨
+  * 별도의 메소드 오버라이딩이 요구됨c
   * Serialiable Interface에 비해 메모리 관리가 효율적
   * Creator, writeToParcel, describeContents Method 구현 필요
 
