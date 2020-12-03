@@ -18,7 +18,7 @@ ListNode* insert_first(ListNode* head, element value)
     ListNode* p = (ListNode*)malloc(sizeof(ListNode));
     p->data = value;
     p->link = head;
-    
+
     head = p;
     return head;
 }
