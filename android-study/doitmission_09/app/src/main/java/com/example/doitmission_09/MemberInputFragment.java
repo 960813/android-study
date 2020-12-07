@@ -1,5 +1,6 @@
 package com.example.doitmission_09;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,58 +8,67 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MemberInputFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class MemberInputFragment extends Fragment {
+    Calendar calendar = Calendar.getInstance();
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    EditText name;
+    EditText age;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    Button btn_birth;
+    Button btn_save;
 
-    public MemberInputFragment() {
-        // Required empty public constructor
-    }
+    private final DatePickerDialog.OnDateSetListener callbackMethod = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            calendar.set(Calendar.YEAR, year);
+            calendar.set(Calendar.MONTH, month);
+            calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MemberInputFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MemberInputFragment newInstance(String param1, String param2) {
-        MemberInputFragment fragment = new MemberInputFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY년 MM월 dd일", Locale.KOREA);
+            btn_birth.setText(simpleDateFormat.format(calendar.getTime()));
         }
-    }
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_member_input, container, false);
+
+        final ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_member_input, container, false);
+
+        btn_birth = root.findViewById(R.id.birthday);
+        btn_save = root.findViewById(R.id.btn_save);
+        name = root.findViewById(R.id.name);
+        age = root.findViewById(R.id.age);
+
+        Date currentTime = Calendar.getInstance().getTime();
+        btn_birth.setText(new SimpleDateFormat("YYYY년 MM월 dd일", Locale.getDefault()).format(currentTime));
+
+        btn_birth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatePickerDialog dialog = new DatePickerDialog(getContext(), callbackMethod, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+
+                dialog.show();
+            }
+        });
+
+        btn_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "이름 : " + name.getText() + "/나이 : " + age.getText() + "/생년월일 : " + btn_birth.getText(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return root;
     }
 }

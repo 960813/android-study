@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:hint="이름"
         android:inputType="textPersonName"
+        android:id="@+id/name"
         android:textSize="40sp" />
 
     <EditText
@@ -24,14 +25,14 @@
         android:layout_height="wrap_content"
         android:hint="나이"
         android:inputType="numberDecimal"
+        android:maxLength="3"
+        android:id="@+id/age"
         android:textSize="40sp" />
 
-    <EditText
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/birthday"
-        android:hint="생년월일"
-        android:inputType="date"
         android:textSize="40sp" />
 
     <Button
