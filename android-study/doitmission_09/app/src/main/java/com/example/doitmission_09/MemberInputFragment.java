@@ -34,7 +34,7 @@ public class MemberInputFragment extends Fragment {
             calendar.set(Calendar.MONTH, month);
             calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY년 MM월 dd일", Locale.KOREA);
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy년 MM월 dd일", Locale.KOREA);
             btn_birth.setText(simpleDateFormat.format(calendar.getTime()));
         }
     };
@@ -51,7 +51,7 @@ public class MemberInputFragment extends Fragment {
         age = root.findViewById(R.id.age);
 
         Date currentTime = Calendar.getInstance().getTime();
-        btn_birth.setText(new SimpleDateFormat("YYYY년 MM월 dd일", Locale.getDefault()).format(currentTime));
+        btn_birth.setText(new SimpleDateFormat("yyyy년 MM월 dd일", Locale.getDefault()).format(currentTime));
 
         btn_birth.setOnClickListener(new View.OnClickListener() {
             @Override
