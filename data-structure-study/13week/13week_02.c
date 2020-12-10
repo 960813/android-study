@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 typedef int element;
-typedef struct ListNode {
+typedef struct DataNodeType {
     element data;
-    struct ListNode* link;
-} ListNode;
+    struct DataNodeType* link;
+} DataNodeType;
 
 void error(char* message)
 {
@@ -13,26 +13,26 @@ void error(char* message)
     exit(1);
 }
 
-ListNode* insert_first(ListNode* head, element value)
+DataNodeType* insert_first(DataNodeType* head, element value)
 {
-    ListNode* p = (ListNode*)malloc(sizeof(ListNode));
+    DataNodeType* p = (DataNodeType*)malloc(sizeof(DataNodeType));
     p->data = value;
     p->link = head;
     head = p;
     return head;
 }
 
-void print_list(ListNode* head)
+void print_list(DataNodeType* head)
 {
-    for (ListNode* p = head; p != NULL; p = p->link) {
+    for (DataNodeType* p = head; p != NULL; p = p->link) {
         printf("%d->", p->data);
     }
     printf("NULL\n");
 }
 
-ListNode* search_list(ListNode* head, element x)
+DataNodeType* search_list(DataNodeType* head, element x)
 {
-    ListNode* p = head;
+    DataNodeType* p = head;
     while (p != NULL) {
         if (p->data == x)
             return p;
@@ -43,7 +43,7 @@ ListNode* search_list(ListNode* head, element x)
 
 int main(void)
 {
-    ListNode* head = NULL;
+    DataNodeType* head = NULL;
 
     head = insert_first(head, 10);
     print_list(head);

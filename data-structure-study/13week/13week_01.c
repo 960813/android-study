@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 typedef int element;
-typedef struct ListNode {
+typedef struct DataNodeType {
     element data;
-    struct ListNode* link;
-} ListNode;
+    struct DataNodeType* link;
+} DataNodeType;
 
 void error(char* message)
 {
@@ -13,27 +13,27 @@ void error(char* message)
     exit(1);
 }
 
-ListNode* insert_first(ListNode* head, element value)
+DataNodeType* insert_first(DataNodeType* head, element value)
 {
-    ListNode* p = (ListNode*)malloc(sizeof(ListNode));
+    DataNodeType* p = (DataNodeType*)malloc(sizeof(DataNodeType));
     p->data = value;
     p->link = head;
     head = p;
     return head;
 }
 
-ListNode* insert(ListNode* head, ListNode* pre, element value)
+DataNodeType* insert(DataNodeType* head, DataNodeType* pre, element value)
 {
-    ListNode* p = (ListNode*)malloc(sizeof(ListNode));
+    DataNodeType* p = (DataNodeType*)malloc(sizeof(DataNodeType));
     p->data = value;
     p->link = pre->link;
     pre->link = p;
     return head;
 }
 
-ListNode* delete_first(ListNode* head)
+DataNodeType* delete_first(DataNodeType* head)
 {
-    ListNode* removed;
+    DataNodeType* removed;
     if (head == NULL)
         return NULL;
 
@@ -43,18 +43,18 @@ ListNode* delete_first(ListNode* head)
     return head;
 }
 
-ListNode* delete (ListNode* head, ListNode* pre)
+DataNodeType* delete (DataNodeType* head, DataNodeType* pre)
 {
-    ListNode* removed;
+    DataNodeType* removed;
     removed = pre->link;
     pre->link = removed->link;
     free(removed);
     return head;
 }
 
-void print_list(ListNode* head)
+void print_list(DataNodeType* head)
 {
-    for (ListNode* p = head; p != NULL; p = p->link) {
+    for (DataNodeType* p = head; p != NULL; p = p->link) {
         printf("%d->", p->data);
     }
     printf("NULL\n");
@@ -62,7 +62,7 @@ void print_list(ListNode* head)
 
 int main(void)
 {
-    ListNode* head = NULL;
+    DataNodeType* head = NULL;
 
     for (int i = 0; i < 5; i++) {
         head = insert_first(head, i);
